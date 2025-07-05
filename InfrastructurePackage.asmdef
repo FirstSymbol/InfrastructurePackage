@@ -1,4 +1,4 @@
 {
 	"name": "InfrastructurePackage",
-	"references":[ "ExtInspectorTools" ]
+	"references":[ "ExtInspectorTools", "Assembly-CSharp" ]
 }
