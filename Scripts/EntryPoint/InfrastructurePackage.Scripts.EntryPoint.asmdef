@@ -1,0 +1,14 @@
+{
+    "name": "InfrastructurePackage.Scripts.EntryPoint",
+    "rootNamespace": "",
+    "references": ["ExtInspectorTools.RequireNotNull"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -3,7 +3,6 @@
   "displayName": "Infrastructure Package",
   "description": "This package contains infrastructure scripts for building the project architecture.",
   "version": "1.0.0",
-  "unity": "6.1",
   "documentationUrl": "https://github.com/FirstSymbol/InfrastructurePackage.git",
   "dependencies": {
     "com.firstsymbol.extinspectortools": "https://github.com/FirstSymbol/ExtInspectorTools.git"
