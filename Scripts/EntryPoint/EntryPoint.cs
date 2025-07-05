@@ -4,6 +4,7 @@ using InfrastructurePackage;
 
 namespace InfrastructurePackage
 {
+  [DefaultExecutionOrder(-1)]
   public class EntryPoint : MonoBehaviour
   {
     [SerializeField, RequireNotNull] public EntryPointBase _entryPoint;
