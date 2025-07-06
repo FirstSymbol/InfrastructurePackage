@@ -1,11 +1,11 @@
 # InfrastructurePackage
-## EntryPoint
+## SceneScriptsPreparator
 ### Settings
-Go to the Script Execution Order and add the EntryPoint script at -1 position to it.
+By default, SceneScriptsPreparator is called before Default Time and has a run order less than 0 (-1 by default)
 #### Execution Order
-![image](https://github.com/user-attachments/assets/f10f14a5-040a-492f-ac54-c47cef3ffb3b)
+![Order](https://github.com/user-attachments/assets/2799800a-bd5a-401c-8645-5546ff6d231c)
 ### How to use
-Create a script that will be inherited from Entry Point Base and override the Awake Enter or Start Enter methods. After that, you should add the Entry Point script to any game object on your stage and transfer the script inherited from EntryPointBase to the Entry Point.
+Create a script that will be inherited from SSPModule class and override the Execute method. After that, you should add the SceneScriptsPreparator script to any game object on your stage and transfer the script inherited from SSPModule to the SceneScriptsPreparator.
 ### Example
 #### Script
 ```Csharp
@@ -14,21 +14,17 @@ using UnityEngine;
 
 namespace ProjectContent.Scripts
 {
-  public class TestEntryPoint : EntryPointBase
+  public class TestSSPModule : SSPModule
   {
-    public override void AwakeEnter()
+    public override void Execute()
     {
-      Debug.Log("TestEntryPoint - Awake");
-    }
-
-    public override void StartEnter()
-    {
-      Debug.Log("TestEntryPoint - Start");
+      Debug.Log($"{nameof(TestSSPModule)} - Execute");
     }
   }
 }
 ```
 #### Inspector
-![image](https://github.com/user-attachments/assets/0826e734-966a-4340-9bed-07cb8610bbb3)
+![Inspector](https://github.com/user-attachments/assets/575ea365-474b-44bc-bb65-6ce7037ef1c0)
 #### Console
-![image](https://github.com/user-attachments/assets/f41549dc-37de-4f1b-bdf1-568ab25b8a86)
+![Console](https://github.com/user-attachments/assets/c33a81ec-b398-49b3-80d5-fc39485ac914)
+
