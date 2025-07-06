@@ -10,7 +10,6 @@ namespace InfrastructurePackage.Editor
     {
       SetupExecutionOrder($"{nameof(SceneScriptsPreparator)}", -1);
     }
-    private static SceneScriptsPreparator SceneScriptsPreparator { get; set; }
     
     static void SetupExecutionOrder(string scriptName, int order)
     {
@@ -25,7 +24,7 @@ namespace InfrastructurePackage.Editor
       string path = AssetDatabase.GUIDToAssetPath(guids[0]);
       MonoScript script = AssetDatabase.LoadAssetAtPath<MonoScript>(path);
 
-      if (MonoImporter.GetExecutionOrder(script) != 0) return;
+      if (script == null || MonoImporter.GetExecutionOrder(script) != 0) return;
       
       MonoImporter.SetExecutionOrder(script, order);
     }
