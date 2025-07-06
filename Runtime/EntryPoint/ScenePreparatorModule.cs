@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using InfrastructurePackage;
 
 namespace InfrastructurePackage
 {
-  [RequireComponent(typeof(EntryPoint))]
-  public abstract class EntryPointBase : MonoBehaviour
+  [RequireComponent(typeof(SceneScriptsPreparator))]
+  public abstract class ScenePreparatorModule : MonoBehaviour
   {
     public virtual void AwakeEnter() { }
     public virtual void StartEnter() { }
