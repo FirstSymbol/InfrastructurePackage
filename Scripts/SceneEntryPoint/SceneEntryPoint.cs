@@ -8,14 +8,14 @@ namespace InfrastructurePackage
   /// </summary>
   public class SceneEntryPoint : MonoBehaviour
   {
-    [field: SerializeField] public SEPModule[] PreparatorModules { get; private set; }
+    [field: SerializeField] public SEPModule[] SEPModules { get; private set; }
 
-    private bool CheckIsEmpty() => PreparatorModules == null || PreparatorModules.Length <= 0;
+    private bool CheckIsEmpty() => SEPModules == null || SEPModules.Length <= 0;
     private void Awake()
     {
       if (CheckIsEmpty()) Debug.LogWarning($"[{nameof(SceneEntryPoint)}] Modules is empty!");
       
-      foreach (SEPModule module in PreparatorModules)
+      foreach (SEPModule module in SEPModules)
         if (module != null) module.Execute();
     }
   }
