@@ -10,7 +10,7 @@ namespace InfrastructurePackage.Editor
   {
     static EditorLoadScript()
     {
-      SetupExecutionOrder($"{nameof(SceneScriptsPreparator)}", -1);
+      SetupExecutionOrder($"{nameof(SceneEntryPoint)}", -1);
     }
     
     static void SetupExecutionOrder(string scriptName, int order)

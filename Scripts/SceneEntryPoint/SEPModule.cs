@@ -2,7 +2,7 @@
 
 namespace InfrastructurePackage
 {
-  public abstract class SSPModule : MonoBehaviour
+  public abstract class SEPModule : MonoBehaviour
   {
     public abstract void Execute();
   }
