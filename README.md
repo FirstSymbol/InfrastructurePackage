@@ -1,30 +1,29 @@
 # InfrastructurePackage
-## SceneScriptsPreparator
+## SceneEntryPoint
 ### Settings
-By default, SceneScriptsPreparator is called before Default Time and has a run order less than 0 (-1 by default)
+By default, SceneEntryPoint is called before Default Time and has a run order less than 0 (-1 by default)
 #### Execution Order
-![Order](https://github.com/user-attachments/assets/2799800a-bd5a-401c-8645-5546ff6d231c)
+![Order](https://github.com/user-attachments/assets/3d75e9ec-341f-49be-8209-72683902a7d1)
 ### How to use
-Create a script that will be inherited from SSPModule class and override the Execute method. After that, you should add the SceneScriptsPreparator script to any game object on your stage and transfer the script inherited from SSPModule to the SceneScriptsPreparator.
+Create a script that will be inherited from SEPModule class and override the Execute method. After that, you should add the SceneEntryPoint script to any game object on your stage and transfer the script inherited from SEPModule to the SceneEntryPoint.
 ### Example
 #### Script
 ```Csharp
-using InfrastructurePackage;
-using UnityEngine;
-
-namespace ProjectContent.Scripts
-{
-  public class TestSSPModule : SSPModule
+public class SceneEntryPoint : MonoBehaviour
   {
-    public override void Execute()
+    [field: SerializeField] public SEPModule[] SEPModules { get; private set; }
+
+    private bool CheckIsEmpty() => SEPModules == null || SEPModules.Length <= 0;
+    private void Awake()
     {
-      Debug.Log($"{nameof(TestSSPModule)} - Execute");
+      if (CheckIsEmpty()) Debug.LogWarning($"[{nameof(SceneEntryPoint)}] Modules is empty!");
+      
+      foreach (SEPModule module in SEPModules)
+        if (module != null) module.Execute();
     }
   }
-}
 ```
 #### Inspector
-![Inspector](https://github.com/user-attachments/assets/575ea365-474b-44bc-bb65-6ce7037ef1c0)
+![Inspector](https://github.com/user-attachments/assets/06bfe92e-0f22-47f1-9cfa-a4fd3772c793)
 #### Console
-![Console](https://github.com/user-attachments/assets/c33a81ec-b398-49b3-80d5-fc39485ac914)
-
+![Console](https://github.com/user-attachments/assets/04f56a79-1594-4bc0-b6f9-3328542fa987)
