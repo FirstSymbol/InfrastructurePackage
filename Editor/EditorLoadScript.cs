@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+
+using UnityEditor;
 using UnityEngine;
 
 namespace InfrastructurePackage.Editor
@@ -31,3 +33,4 @@ namespace InfrastructurePackage.Editor
 
   }
 }
+#endif
