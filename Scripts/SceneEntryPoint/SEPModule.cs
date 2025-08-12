@@ -4,6 +4,7 @@ namespace InfrastructurePackage
 {
   public abstract class SEPModule : MonoBehaviour
   {
-    public abstract void Execute();
+    public abstract void ExecuteAwake();
+    public abstract void ExecuteStart();
   }
 }

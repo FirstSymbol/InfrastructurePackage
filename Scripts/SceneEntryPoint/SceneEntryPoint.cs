@@ -13,10 +13,19 @@ namespace InfrastructurePackage
     private bool CheckIsEmpty() => SEPModules == null || SEPModules.Length <= 0;
     private void Awake()
     {
-      if (CheckIsEmpty()) Debug.LogWarning($"[{nameof(SceneEntryPoint)}] Modules is empty!");
+      if (CheckIsEmpty())
+      {
+        Debug.LogWarning($"[{nameof(SceneEntryPoint)}] Modules is empty!"); return;
+      }
       
       foreach (SEPModule module in SEPModules)
-        if (module != null) module.Execute();
+        if (module != null) module.ExecuteAwake();
+    }
+
+    private void Start()
+    {
+      foreach (SEPModule module in SEPModules)
+        if (module != null) module.ExecuteAwake();
     }
   }
 }

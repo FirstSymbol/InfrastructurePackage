@@ -5,7 +5,6 @@
   "version": "1.0.0",
   "documentationUrl": "https://github.com/FirstSymbol/InfrastructurePackage.git",
   "dependencies": {
-    "com.firstsymbol.extinspectortools": "https://github.com/FirstSymbol/ExtInspectorTools.git"
   },
   "author": {
     "name": "FirstSymbol",
