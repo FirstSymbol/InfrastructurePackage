@@ -19,7 +19,7 @@ public class SceneEntryPoint : MonoBehaviour
       if (CheckIsEmpty()) Debug.LogWarning($"[{nameof(SceneEntryPoint)}] Modules is empty!");
       
       foreach (SEPModule module in SEPModules)
-        if (module != null) module.Execute();
+        if (module != null) module.ExecuteAwake();
     }
   }
 ```
