@@ -25,7 +25,7 @@ namespace InfrastructurePackage
     private void Start()
     {
       foreach (SEPModule module in SEPModules)
-        if (module != null) module.ExecuteAwake();
+        if (module != null) module.ExecuteStart();
     }
   }
 }
